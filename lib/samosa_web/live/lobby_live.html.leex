@@ -1,0 +1,35 @@
+<%= cond do  %>
+    <% @server_shutdown -> %>
+        <div>Lobby Server: SHUTDOWN!!!</div>
+    <% true -> %>
+        <div></div>
+<% end %>
+<section>
+    <div class=main-container>
+        <%=  if @loaded == true do %>
+            <span>Room Code: <%= @room.room_code %></span>
+
+            <span>[SELECTED GAME HERE]</span>
+            <span>Host:<%=  @room.host_user_id %></span>
+
+            <div>
+                <span>Players</span>
+                <%=  for member_id <- List.delete(@room.member_ids, @room.host_user_id) do %>
+                    <span> <%= member_id %> </span>
+                    <br>
+                <% end %>
+            </div>
+        <% end %>
+
+        <span>You are: <%= @name %> (<%=@ user_id %>)</Span>
+
+
+        <div id="disconnection-message" phx-hook="DisplayWhileDisconnected">
+            Status: Disconnected
+        </div>
+
+        <div id="connection-message" phx-hook="DisplayWhileConnected" class="hide-by-default">
+            Status: Connected
+        </div>
+    </div>
+</section>

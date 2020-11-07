@@ -1,0 +1,91 @@
+.main-container {
+    background: wheat;
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+
+    border-width: .5rem;
+    border-style: solid;
+    border-color: tomato;
+    border-radius: 3rem;
+    padding-top: 1rem;
+}
+
+.form-inherit {
+    display: inherit;
+    flex-direction: inherit;
+}
+
+
+.text-field {
+    display: flex;
+    font-size: 2rem;
+    text-align: left;
+    text-align: center;
+    margin: 1.5rem;
+}
+
+.text-field-label {
+    font-size: 3rem;
+}
+
+@media screen and (max-width: 600px) {
+    .text-field {
+        font-size: 1rem;
+    }
+
+    .text-field-label {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+.text-input-block {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .text-input-block {
+        font-size: 1rem;
+    }
+}
+
+
+.action-button {
+    padding: 1rem;
+    font-size: 4rem;
+    margin: 1.5rem;
+    border-radius: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+    .action-button {
+        font-size: 2rem;
+    }
+}
+
+.liveview__connected--hide {
+    display: none !important;
+}
+
+.liveview__disconnected--hide {
+    display: none !important;
+}
+
+.liveview__connected--show {
+    display: flex !important;
+}
+
+.liveview__disconnected--show {
+    display: flex !important;
+}
+
+.hide-by-default {
+    display: none;
+}
